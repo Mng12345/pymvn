@@ -21,7 +21,7 @@ setup(
         "*.py-tpl"
     ]},
     platforms=["all"],
-    url="",
+    url="https://github.com/Mng12345/pymvn",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
