@@ -1,5 +1,7 @@
 # pymvn
-package your python code and dependices into single one zip file, then run `python *.zip` to run your project.
+将python代码及依赖打包成zip文件，使用python XX.zip直接运行
+package your python code and dependices into single one zip file, 
+then run `python *.zip` to run your project.
 模仿maven的形式，利用__main__.py的特性，将python项目和依赖打包成一个zip文件，可以直接使用python *.zip运行
 
 安装：
