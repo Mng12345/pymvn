@@ -60,7 +60,7 @@ def generate_mainpy(prj_name: str):
                 if not line or '"""' in line:
                     continue
                 if "{{site_packages_path}}" in line:
-                    line = line.replace("{{site_packages_path}}", get_site_packages_path())
+                    line = line.replace("{{site_packages_path}}", "venv/site-packages")
                 if "{{main_func_path}}" in line:
                     line = line.replace("{{main_func_path}}", get_main_func_path())
                 fw.write(line)

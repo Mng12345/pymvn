@@ -2,11 +2,13 @@
 # __main__.py模板
 import sys
 import importlib
+import os
 
 
 if __name__ == "__main__":
     # 设置site-packages
-    site_packages_path = "{{site_packages_path}}"
+    prj_path = os.path.split(os.path.abspath(__file__))[0]
+    site_packages_path = f"{prj_path}/{{site_packages_path}}"
     sys.path.append(site_packages_path)
     # main_func
     main_func_path = "{{main_func_path}}"
