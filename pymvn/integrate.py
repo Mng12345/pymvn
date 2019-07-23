@@ -19,6 +19,7 @@ def zipdir(dirpath: str, filename: str, format: str):
 #     other_dir
 def package():
     root_path = os.getcwd()
+    site_packages_path = f"{root_path}/{get_site_packages_path()}"
     prj_name = os.path.split(root_path)[1]
     objs = os.listdir(root_path)
     root_path_copy = f"{root_path}/{prj_name}"
@@ -35,7 +36,7 @@ def package():
                 shutil.copytree(final_path, final_path_copy)
             else:
                 # 将site_packages复制到prj_name下
-                final_path = f"{final_path}/Lib/site-packages"
+                final_path = site_packages_path
                 final_path_copy = f"{final_path_copy}/site-packages"
                 shutil.copytree(final_path, final_path_copy)
         elif os.path.isfile(final_path):

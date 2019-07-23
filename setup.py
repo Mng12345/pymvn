@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymvn',
-    version="0.0.3",
+    version="0.0.4",
     description=(
         """package python src and site-packages into *.zip, 
            then use `python *.zip` to run your program in any
