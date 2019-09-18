@@ -1,6 +1,8 @@
-# 解析.pybuild文件
+# 解析.pymvn文件
 # ：主函数
 import os
+
+from pymvn.dependence import get_root_dependence_path
 
 _root_path = None
 _main_func = None
@@ -31,7 +33,7 @@ def get_site_packages_path():
 # 解析参数main_func,site_packages_path
 def parsepybuild():
     global _main_func, _site_packages_path
-    root_path = get_root_path()
+    _site_packages_path = get_root_dependence_path()
     pybuild_file = f"{os.getcwd()}/.pymvn"
     if not os.path.exists(pybuild_file):
         with open(pybuild_file, mode="w", encoding="utf-8") as f:
@@ -46,14 +48,11 @@ def parsepybuild():
                 k, v = line.strip().split("=")
                 k = k.strip()
                 v = v.strip()
-                if k not in {"main_func", "site_packages_path"}:
-                    raise KeyError(f".pybuilld key error, don't known {k}")
+                if k not in {"main_func"}:
+                    raise KeyError(f".pymvn key error, don't known {k}")
                 if not v:
                     raise ValueError(f"nothing for {k}")
                 if k == "main_func":
                     _main_func = v
-                if k == "site_packages_path":
-                    _site_packages_path = v
-
 
 

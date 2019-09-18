@@ -19,7 +19,7 @@ def zipdir(dirpath: str, filename: str, format: str):
 #     other_dir
 def package():
     root_path = os.getcwd()
-    site_packages_path = f"{root_path}/{get_site_packages_path()}"
+    site_packages_path = get_site_packages_path()
     prj_name = os.path.split(root_path)[1]
     objs = os.listdir(root_path)
     root_path_copy = f"{root_path}/{prj_name}"
@@ -44,7 +44,7 @@ def package():
     generate_mainpy(prj_name)
     zipdir(f"{root_path}/{prj_name}", prj_name, "zip")
     # 删除prj_name
-    # os.remove(f"{root_path}/{prj_name}")
+    shutil.rmtree(f"{root_path}/{prj_name}")
 
 
 def generate_mainpy(prj_name: str):

@@ -3,11 +3,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymvn',
-    version="0.0.4",
+    version="0.0.7.1",
     description=(
         """package python src and site-packages into *.zip, 
            then use `python *.zip` to run your program in any
-           computer which has the correct python interpreter!,
+           computer which has the correct python interpreter!
            for current version,your project must use virtualenv"""
     ),
     author="zhangming",
@@ -31,5 +31,8 @@ setup(
         'Programming Language :: Python :: Implementation',
         'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: Libraries'
+    ],
+    install_requires=[
+        "loguru"
     ]
 )

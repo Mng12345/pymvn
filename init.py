@@ -12,4 +12,3 @@ def init():
     if not os.path.exists(pybuild_path):
         with open(pybuild_path, mode="w", encoding="utf-8") as f:
             f.write("main_func = \n")
-            f.write("site_packages_path = \n")
