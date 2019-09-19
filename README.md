@@ -12,10 +12,9 @@ then run `python xx.zip` to run your project.
 ## 使用
 ### 打开项目根路径
 `python -m pymvn init`
-### 在生成的.pymvn文件中输入项目main函数和依赖路径如
+### 在生成的.pymvn文件中输入项目main函数
 ```
     main_func = main.main
-    site_packages_path = venv/Lib/site-packages
 ```
 ### 然后使用命令打包
 ```
